@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/fedepau/.programs/st'
+let g:netrw_dirhist_7='/home/fedepau/Documents/methane'
+let g:netrw_dirhist_6='/home/fedepau/Documents'
+let g:netrw_dirhist_5='/home/fedepau/Documents/methane'
+let g:netrw_dirhist_4='/home/fedepau/Documents'
+let g:netrw_dirhist_3='/etc/rc.d'
+let g:netrw_dirhist_2='/etc/rc.d/init.d'
+let g:netrw_dirhist_1='/etc/rc.d'
+let g:netrw_dirhist_0='/etc/ssl/certs'
+let g:netrw_dirhist_9='/home/fedepau/MUTT_tests'
