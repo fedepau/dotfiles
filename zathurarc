@@ -1,0 +1,25 @@
+#           _   _                              
+#  ______ _| |_| |__  _   _ _ __ __ _ _ __ ___ 
+# |_  / _` | __| '_ \| | | | '__/ _` | '__/ __|
+#  / / (_| | |_| | | | |_| | | | (_| | | | (__ 
+# /___\__,_|\__|_| |_|\__,_|_|  \__,_|_|  \___|
+
+# ~/.config/zathura/zathurarc
+
+# general settings
+set sandbox none
+set selection-clipboard clipboard
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+
+# url settings
+xdg-settings set default.web-browser brave.desktop
+google-chrome-stable --no-sandbox
+
+# keymaps
+unmap + zoom in
+unmap - zoom out
+map <C-=> zoom in
+map <C--> zoom out
+map i recolor
+map p print
