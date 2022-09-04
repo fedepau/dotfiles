@@ -9,12 +9,13 @@
 " ~/.config/nvim/init.vim
 
 " general settings
-let g:airline_theme='base16'
+" let g:airline_theme='base16'
 set clipboard+=unnamedplus
 set title
 set mouse=a
 set nocompatible
 set autoindent
+set number relativenumber
 filetype on
 filetype plugin on
 filetype indent on
