@@ -3,6 +3,8 @@ export PATH=/home/fedepau/.local/bin/programs:$PATH
 export PATH=/home/fedepau/.local/bin/scripts:$PATH
 export PATH=/home/fedepau/.local/bin/statusbar:$PATH
 
+fpath=($ZDOTDIR/plugins $fpath)
+
 # xdg base dirs
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"

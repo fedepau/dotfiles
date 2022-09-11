@@ -47,7 +47,8 @@ feh --bg-fill --no-fehbg ~/.wallpapers/cvb2tbnrcgmx.jpg &
 /usr/bin/dunst &
 /usr/bin/dropbox &
 /usr/local/bin/dwmblocks &
-sudo rfkill toggle bluetooth &
+sudo rfkill block bluetooth &
+sudo rfkill block wifi &
 while true; do
 	dwm >/dev/null 2>&1
 done

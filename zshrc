@@ -1,14 +1,20 @@
+# 
+#    ::::::::: .::::::.   ::   .: :::::::..     .,-:::::  
+#    '`````;;;;;;`    `  ,;;   ;;,;;;;``;;;;  ,;;;'````'  
+#        .n[[''[==/[[[[,,[[[,,,[[[ [[[,/[[['  [[[         
+#      ,$$P"    '''    $"$$$"""$$$ $$$$$$c    $$$         
+# d8b,888bo,_  88b    dP 888   "88o888b "88bo,`88bo,__,o, 
+# YMP `""*UMM   "YMmMY"  MMM    YMMMMMM   "W"   "YUMMMMMP"
+
 # If not running interactively, don't do anything
 # [[ $- != *i* ]] && return
-
-PS1="[%B%{$fg[yellow]%}%n%{$reset_color%}@%B%{$fg[blue]%}%m %B%{$fg[green]%}%~%{$reset_color%}] "
 
 # navigation
 setopt AUTO_CD                  # go to written folder withouth cd
 setopt AUTO_PUSHD               # push visited directories onto the stack
 setopt PUSHD_IGNORE_DUPS        # do not store duplicates in the directory stack
 setopt PUSHD_SILENT             # do not print the directory stack after pushd
-setopt CORRECT                  # spelling correction
+#setopt CORRECT                  # spelling correction, can be annoying at times
 setopt CDABLE_VARS              # allows cd to paths stored in variables
 setopt EXTENDED_GLOB            # use extended globbing syntax
 
@@ -24,7 +30,31 @@ setopt HIST_SAVE_NO_DUPS        # do not write a duplicate event to the history 
 setopt HIST_VERIFY              # do not execute immediately upon history expansion
 
 # colors
-autoload -U colors && colors    # fetch colors from terminal colorscheme
+autoload -U colors && colors    # fetch colors from current terminal colorscheme
+
+# left prompt
+PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$reset_color%} %{$fg[cyan]%}❯ "
+
+# right prompt: shows current branch plus:
+#   if there are unstaged changes,
+#   if there are staged changes,
+#   if there are untracked files
+setopt PROMPT_SUBST
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ":vcs_info:git:*" check-for-changes true
+zstyle ":vcs_info:git:*" unstagedstr " "
+zstyle ":vcs_info:git:*" stagedstr " "
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
++vi-git-untracked() {
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+     git status --porcelain | grep -m 1 '^??' &>/dev/null
+  then
+    hook_com[misc]=' '
+  fi
+}
+zstyle ":vcs_info:git:*" formats " %B%b %c%u%m"
+RPROMPT=\$vcs_info_msg_0_
 
 # aliases
 source $ZDOTDIR/aliases
@@ -32,19 +62,16 @@ source $ZDOTDIR/aliases
 # jump to recently visited directories in the stack 
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-setopt promptsubst
 setopt autocd beep extendedglob nomatch notify
 export KEYTIMEOUT=1
 zmodload zsh/complist
 autoload -U compinit; compinit
 
+# plugins
 source $ZDOTDIR/plugins/cursormode
-#source $ZDOTDIR/plugins/prompt
+source $ZDOTDIR/plugins/lfcd
 
-fpath=($ZDOTDIR/plugins $fpath)
-autoload -Uz prompt2;
-prompt2
-
+# vim keybinds
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey '^F' history-incremental-search-forward
@@ -58,15 +85,10 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# this emulates vim-surround
-autoload -Uz surround
-zle -N delete-surround surround
-zle -N add-surround surround
-zle -N change-surround surround
-bindkey -M vicmd cs change-surround
-bindkey -M vicmd ds delete-surround
-bindkey -M vicmd ys add-surround
-bindkey -M visual S add-surround
+# expand currently typet alias (by pressing ctrl+a)
+zle -C alias-expension complete-word _generic
+bindkey '^a' alias-expension
+zstyle ':completion:alias-expension:*' completer _expand_alias
 
-# syntax highlightning (should be sourced last!)
-source /home/fedepau/.programs/fast-syntax-highlighting/F-Sy-H.plugin.zsh
+# syntax highlightning (should be sourced last)
+ source /home/fedepau/.programs/fast-syntax-highlighting/F-Sy-H.plugin.zsh
