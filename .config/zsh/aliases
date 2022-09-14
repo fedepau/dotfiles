@@ -1,0 +1,29 @@
+# system aliases
+alias sdn="sudo shutdown -h now"
+alias rn="sudo reboot -h now"
+
+# software aliases
+alias bm="bashmount"
+alias gp="gnuplot"
+alias ll="ls -alh --color=auto"
+alias ls="ls --color=auto"
+alias lo="libreoffice"
+
+# pacman
+alias pacman="sudo pacman"
+
+
+alias vim="nvim"
+alias wttr="curl wttr.in/@147.122.1.160"
+alias z="zathura"
+
+# OpenRC
+alias rc-service="sudo rc-service"
+alias rc-update="sudo rc-update"
+
+# XCrySDen
+alias xcrin="xcrysden --pwi"
+alias xcrout="xcrysden --pwo"
+
+# pushd
+alias d='dirs -v'
