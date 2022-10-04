@@ -17,9 +17,7 @@ xdg-settings set default.web-browser brave.desktop
 google-chrome-stable --no-sandbox
 
 # keymaps
-unmap + zoom in
-unmap - zoom out
-map <C-=> zoom in
-map <C--> zoom out
 map i recolor
 map p print
+map = zoom in
+map 0 zoom default

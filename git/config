@@ -1,0 +1,16 @@
+[user]
+	name = Carlo Federico Pauletti
+	email = cpaulett@sissa.it
+[core]
+    excludesFile = /home/fedepau/.gitignore
+[alias]
+	br = branch
+	co = checkout
+	st = status
+#	ci = commit -S -m
+	ci = commit -m
+    lch = rev-parse --short HEAD
+#[commit]
+#	gpgsign = true
+[init]
+	defaultBranch = master

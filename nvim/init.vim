@@ -61,6 +61,9 @@ endif
 Plug 'lervag/vimtex'
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
 " Autocompletion for LaTeX:
