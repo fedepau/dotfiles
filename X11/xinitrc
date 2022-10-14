@@ -1,9 +1,9 @@
-# ~/.xinitrc
+# ~/config/X11/xinitrc
 
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$HOME/.config/X11/xinit/Xresources
+usermodmap=$HOME/.config/X11/xinit/Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -40,14 +40,19 @@ fi
 
 xbacklight -set 25 &
 pactl set-sink-volume @DEFAULT_SINK@ 25% &
-setxkbmap us &
+#setxkbmap us &
+setxkbmap it &
 picom -f &
 feh --bg-fill --no-fehbg ~/.wallpapers/cvb2tbnrcgmx.jpg &
 #feh --bg-center --randomize ~/.wallpapers/*.jpg &
 /usr/bin/dunst &
 /usr/bin/dropbox &
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/wireplumber &
 /usr/local/bin/dwmblocks &
 /usr/local/bin/encircle &
+/usr/local/bin/xban &
 sudo rfkill block bluetooth &
 sudo rfkill block wifi &
 while true; do
