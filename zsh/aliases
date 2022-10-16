@@ -1,6 +1,7 @@
 # system aliases
 alias sdn="sudo shutdown -h now"
 alias rn="sudo reboot -h now"
+alias hibernate="sudo loginctl hibernate"
 
 # software aliases
 alias bm="bashmount"
@@ -11,7 +12,13 @@ alias lo="libreoffice"
 
 # pacman
 alias pacman="sudo pacman"
+function bacpac() { pacman -Qi | grep -E "Name|Install Date" | grep -B 1 "$1 $2"; }
 
+# rsync
+alias rsync-copy='rsync -avz --progress -h'
+alias rsync-move='rsync -avz --progress -h --remove-source-files'
+alias rsync-synchronize='rsync -avzu --delete --progress -h'
+alias rsync-update='rsync -avzu --progress -h'
 
 alias vim="nvim"
 alias wttr="curl wttr.in/@147.122.1.160"

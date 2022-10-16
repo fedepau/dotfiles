@@ -7,9 +7,9 @@
 echo "Enter username: "
 read USER
 
-[[ -f /home/$USER/.config" ]] || mkdir /home/$USER/.config
+[[ -f "/home/$USER/.config" ]] || mkdir /home/$USER/.config 2>&1 >/dev/null
 
-for app in dunst, git, nvim, surf, X11, zathura, zsh
+for app in dunst git nvim surf X11 zathura zsh
 do
     [[ -f /home/$USER/.config/app" ]] || mkdir /home/$USER/.config/$app
 done
