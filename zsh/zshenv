@@ -1,4 +1,5 @@
 # executables
+export PATH=/home/fedepau/.local/bin:$PATH
 export PATH=/home/fedepau/.local/bin/programs:$PATH
 export PATH=/home/fedepau/.local/bin/scripts:$PATH
 export PATH=/home/fedepau/.local/bin/statusbar:$PATH
@@ -13,6 +14,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # nvim
 export EDITOR=nvim
 export VISUAL=nvim
+
+#X11
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 
 # zsh
 export ZDOTDIR="$HOME/.config/zsh"
