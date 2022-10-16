@@ -40,8 +40,8 @@ fi
 
 xbacklight -set 25 &
 pactl set-sink-volume @DEFAULT_SINK@ 25% &
-#setxkbmap us &
-setxkbmap it &
+setxkbmap us &
+#setxkbmap it &
 picom -f &
 feh --bg-fill --no-fehbg ~/.wallpapers/cvb2tbnrcgmx.jpg &
 #feh --bg-center --randomize ~/.wallpapers/*.jpg &
