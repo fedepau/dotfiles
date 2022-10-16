@@ -43,7 +43,7 @@ pactl set-sink-volume @DEFAULT_SINK@ 25% &
 setxkbmap us &
 #setxkbmap it &
 picom -f &
-feh --bg-fill --no-fehbg ~/.wallpapers/cvb2tbnrcgmx.jpg &
+feh --bg-fill --no-fehbg ~/Pictures/cvb2tbnrcgmx.jpg &
 #feh --bg-center --randomize ~/.wallpapers/*.jpg &
 /usr/bin/dunst &
 /usr/bin/dropbox &

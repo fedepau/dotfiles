@@ -10,6 +10,9 @@ alias ll="ls -alh --color=auto"
 alias ls="ls --color=auto"
 alias lo="libreoffice"
 
+# GnuPG
+alias gpg2="gpg2 --homedir "$XDG_DATA_HOME"/gnupg"
+
 # pacman
 alias pacman="sudo pacman"
 function bacpac() { pacman -Qi | grep -E "Name|Install Date" | grep -B 1 "$1 $2"; }

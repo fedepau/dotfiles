@@ -11,7 +11,7 @@ read USER
 
 for app in dunst git nvim surf X11 zathura zsh
 do
-    [[ -f /home/$USER/.config/app" ]] || mkdir /home/$USER/.config/$app
+    [[ -f "/home/$USER/.config/app" ]] || mkdir /home/$USER/.config/$app
 done
 
 # dunst
