@@ -51,8 +51,8 @@ feh --bg-fill --no-fehbg ~/Pictures/cvb2tbnrcgmx.jpg &
 /usr/bin/pipewire-pulse &
 /usr/bin/wireplumber &
 /usr/local/bin/dwmblocks &
-/usr/local/bin/encircle &
-/usr/local/bin/xban &
+/usr/bin/encircle &
+/usr/bin/xban &
 sudo rfkill block bluetooth &
 sudo rfkill block wifi &
 while true; do
