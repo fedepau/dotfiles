@@ -92,4 +92,4 @@ bindkey '^a' alias-expension
 zstyle ':completion:alias-expension:*' completer _expand_alias
 
 # syntax highlightning (should be sourced last)
- source /home/fedepau/.programs/fast-syntax-highlighting/F-Sy-H.plugin.zsh
+ source /home/fedepau/.programs/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
