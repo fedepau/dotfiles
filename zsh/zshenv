@@ -2,7 +2,7 @@
 export PATH=/home/fedepau/.local/bin:$PATH
 export PATH=/home/fedepau/.local/bin/programs:$PATH
 export PATH=/home/fedepau/.local/bin/scripts:$PATH
-export PATH=/home/fedepau/.local/bin/statusbar:$PATH
+export PATH=/home/fedepau/.local/bin/scripts/statusbar:$PATH
 
 # GnuPG
 export GNUPGHOME="$XDG_DAYA_HOME"/gnupg
