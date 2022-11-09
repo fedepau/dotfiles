@@ -1,8 +1,9 @@
 # executables
-export PATH=/home/fedepau/.local/bin:$PATH
-export PATH=/home/fedepau/.local/bin/programs:$PATH
-export PATH=/home/fedepau/.local/bin/scripts:$PATH
-export PATH=/home/fedepau/.local/bin/scripts/statusbar:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin/programs:$PATH
+export PATH=$HOME/.local/bin/scripts:$PATH
+export PATH=$HOME/.local/bin/scripts/statusbar:$PATH
+export LD_LIBRARY_PATH=$HOME/.programs/togl/lib/Togl2.0:$LD_LIBRARY_PATH
 
 # GnuPG
 export GNUPGHOME="$XDG_DAYA_HOME"/gnupg

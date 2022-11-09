@@ -38,10 +38,10 @@ if [[ "$(xrandr | grep 'VGA1 connected')" != "" ]]; then
 xrandr --output LVDS1 --primary --mode 1366x768 --pos 1280x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output HDMI1 --off --output HDMI2 --off --output HDMI3 --off --output VGA1 --mode 1280x1024 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 fi
 
-#setxkbmap us &
-setxkbmap it &
+setxkbmap us &
+#setxkbmap it &
 picom -f &
-feh --bg-fill --no-fehbg ~/Pictures/cvb2tbnrcgmx.jpg &
+feh --bg-fill --no-fehbg ~/Downloads/Gentoo-parody-Richard-Stallman-Grand-Theft-Auto-1341397-wallhere.com.jpg &
 #feh --bg-center --randomize ~/.wallpapers/*.jpg &
 /usr/bin/dunst &
 /usr/bin/dropbox &
