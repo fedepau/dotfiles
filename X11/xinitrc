@@ -41,7 +41,7 @@ fi
 setxkbmap us &
 #setxkbmap it &
 picom -f &
-feh --bg-fill --no-fehbg ~/Pictures/cvb2tbnrcgmx.jpg &
+feh --bg-fill --no-fehbg ~/Pictures/space.jpg &
 #feh --bg-center --randomize ~/.wallpapers/*.jpg &
 /usr/bin/dunst &
 /usr/bin/dropbox &

@@ -9,7 +9,7 @@ read USER
 
 [[ -f "/home/$USER/.config" ]] || mkdir /home/$USER/.config 2>&1 >/dev/null
 
-for app in dunst git nvim rtorrent surf X11 zathura zsh
+for app in dunst git nvim ranger rtorrent surf X11 zathura zsh
 do
     [[ -f "/home/$USER/.config/app" ]] || mkdir /home/$USER/.config/$app
 done
@@ -22,6 +22,13 @@ ln -s /home/$USER/.programs/dotfiles/git/config /home/$USER/.config/git/config
 
 # nvim
 ln -s /home/$USER/.programs/dotfiles/nvim/init.vim /home/$USER/.config/nvim/init.vim
+
+# ranger
+ln -s /home/$USER/.programs/dotfiles/ranger/commands_full.py /home/$USER/.config/ranger/commands_full.py
+ln -s /home/$USER/.programs/dotfiles/ranger/commands.py /home/$USER/.config/ranger/commands.py
+ln -s /home/$USER/.programs/dotfiles/ranger/rc.conf /home/$USER/.config/ranger/rc.conf
+ln -s /home/$USER/.programs/dotfiles/ranger/rifle.conf /home/$USER/.config/ranger/rifle.conf
+ln -s /home/$USER/.programs/dotfiles/ranger/scope.sh /home/$USER/.config/ranger/scope.sh
 
 # rtorrent
 ln -s /home/$USER/.programs/dotfiles/rtorrent/rtorrent.rc /home/$USER/.config/rtorrent/rtorrent.rc
