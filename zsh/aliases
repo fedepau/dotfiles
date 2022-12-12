@@ -36,6 +36,7 @@ alias rc-update="sudo rc-update"
 # XCrySDen
 alias xcrin="xcrysden --pwi"
 alias xcrout="xcrysden --pwo"
+alias xcryz="xcrysden --xyz"
 
 # pushd
 alias d='dirs -v'
